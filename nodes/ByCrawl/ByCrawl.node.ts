@@ -1,4 +1,19 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { threadsOperations, threadsFields } from './descriptions/ThreadsDescription';
+import { instagramOperations, instagramFields } from './descriptions/InstagramDescription';
+import { facebookOperations, facebookFields } from './descriptions/FacebookDescription';
+import { xOperations, xFields } from './descriptions/XDescription';
+import { tiktokOperations, tiktokFields } from './descriptions/TikTokDescription';
+import { youtubeOperations, youtubeFields } from './descriptions/YouTubeDescription';
+import { redditOperations, redditFields } from './descriptions/RedditDescription';
+import { linkedinOperations, linkedinFields } from './descriptions/LinkedInDescription';
+import { dcardOperations, dcardFields } from './descriptions/DcardDescription';
+import { pttOperations, pttFields } from './descriptions/PttDescription';
+import { gmapsOperations, gmapsFields } from './descriptions/GoogleMapsDescription';
+import { trustpilotOperations, trustpilotFields } from './descriptions/TrustpilotDescription';
+import { job104Operations, job104Fields } from './descriptions/Job104Description';
+import { rent591Operations, rent591Fields } from './descriptions/Rent591Description';
+import { webFetchOperations, webFetchFields } from './descriptions/WebFetchDescription';
 
 export class ByCrawl implements INodeType {
   description: INodeTypeDescription = {
@@ -51,6 +66,36 @@ export class ByCrawl implements INodeType {
         ],
         default: 'threads',
       },
+      ...threadsOperations,
+      ...threadsFields,
+      ...instagramOperations,
+      ...instagramFields,
+      ...facebookOperations,
+      ...facebookFields,
+      ...xOperations,
+      ...xFields,
+      ...tiktokOperations,
+      ...tiktokFields,
+      ...youtubeOperations,
+      ...youtubeFields,
+      ...redditOperations,
+      ...redditFields,
+      ...linkedinOperations,
+      ...linkedinFields,
+      ...dcardOperations,
+      ...dcardFields,
+      ...pttOperations,
+      ...pttFields,
+      ...gmapsOperations,
+      ...gmapsFields,
+      ...trustpilotOperations,
+      ...trustpilotFields,
+      ...job104Operations,
+      ...job104Fields,
+      ...rent591Operations,
+      ...rent591Fields,
+      ...webFetchOperations,
+      ...webFetchFields,
     ],
   };
 }
