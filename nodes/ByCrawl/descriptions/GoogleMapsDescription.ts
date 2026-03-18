@@ -23,6 +23,16 @@ export const gmapsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'places',
+                },
+              },
+            ],
+          },
         },
       },
       {

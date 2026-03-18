@@ -19,6 +19,7 @@ export const dcardOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/dcard/forums/{{$parameter["forumAlias"]}}',
+            timeout: 120000,
           },
         },
       },
@@ -31,6 +32,17 @@ export const dcardOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/dcard/forums/{{$parameter["forumAlias"]}}/posts',
+            timeout: 120000,
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },
@@ -43,6 +55,7 @@ export const dcardOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/dcard/personas/{{$parameter["uid"]}}',
+            timeout: 120000,
           },
         },
       },
@@ -58,6 +71,17 @@ export const dcardOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+            timeout: 120000,
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },

@@ -32,6 +32,16 @@ export const instagramOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/instagram/users/{{$parameter["username"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -56,6 +66,16 @@ export const instagramOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/instagram/posts/{{$parameter["shortcode"]}}/comments',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'comments',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -70,6 +90,16 @@ export const instagramOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'tags',
+                },
+              },
+            ],
           },
         },
       },

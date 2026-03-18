@@ -44,6 +44,16 @@ export const youtubeOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/youtube/videos/{{$parameter["videoId"]}}/comments',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'comments',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -70,6 +80,16 @@ export const youtubeOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'videos',
+                },
+              },
+            ],
           },
         },
       },

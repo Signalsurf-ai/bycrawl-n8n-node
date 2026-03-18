@@ -32,6 +32,16 @@ export const pttOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/ptt/boards/{{$parameter["boardName"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -61,6 +71,16 @@ export const pttOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },
@@ -142,8 +162,8 @@ export const pttFields: INodeProperties[] = [
         displayName: 'Page',
         name: 'page',
         type: 'number',
-        typeOptions: { minValue: 1 },
-        default: 0,
+        typeOptions: {},
+        default: 1,
         description: 'PTT index page number; omit for latest',
         routing: {
           request: {

@@ -32,6 +32,16 @@ export const trustpilotOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/trustpilot/businesses/{{$parameter["domain"]}}/reviews',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'reviews',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -46,6 +56,16 @@ export const trustpilotOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'businesses',
+                },
+              },
+            ],
           },
         },
       },
@@ -160,7 +180,7 @@ export const trustpilotFields: INodeProperties[] = [
         name: 'stars',
         type: 'number',
         typeOptions: { minValue: 1, maxValue: 5 },
-        default: 0,
+        default: 1,
         description: 'Filter by star rating',
         routing: {
           request: {

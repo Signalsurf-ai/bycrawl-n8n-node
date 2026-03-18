@@ -32,6 +32,16 @@ export const facebookOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/facebook/users/{{$parameter["username"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -62,6 +72,16 @@ export const facebookOperations: INodeProperties[] = [
               url: '={{$parameter["postUrl"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'comments',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -77,6 +97,16 @@ export const facebookOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -88,6 +118,16 @@ export const facebookOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '/facebook/marketplace/listings',
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'listings',
+                },
+              },
+            ],
           },
         },
       },
@@ -103,6 +143,16 @@ export const facebookOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'listings',
+                },
+              },
+            ],
           },
         },
       },

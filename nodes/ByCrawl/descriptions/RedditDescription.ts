@@ -32,6 +32,16 @@ export const redditOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/reddit/subreddits/{{$parameter["subredditName"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -55,6 +65,16 @@ export const redditOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/reddit/users/{{$parameter["username"]}}/posts',
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },
@@ -82,6 +102,16 @@ export const redditOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },

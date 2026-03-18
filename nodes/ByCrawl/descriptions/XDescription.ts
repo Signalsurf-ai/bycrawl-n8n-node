@@ -32,6 +32,16 @@ export const xOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/x/users/{{$parameter["username"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'tweets',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -58,6 +68,16 @@ export const xOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'tweets',
+                },
+              },
+            ],
           },
         },
       },

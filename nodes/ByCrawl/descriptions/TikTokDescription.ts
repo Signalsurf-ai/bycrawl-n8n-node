@@ -32,6 +32,16 @@ export const tiktokOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/tiktok/users/{{$parameter["username"]}}/videos',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'videos',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -55,6 +65,17 @@ export const tiktokOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/tiktok/videos/{{$parameter["videoId"]}}/comments',
+            timeout: 120000,
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'comments',
+                },
+              },
+            ],
           },
         },
       },
@@ -82,6 +103,17 @@ export const tiktokOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+            timeout: 120000,
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'videos',
+                },
+              },
+            ],
           },
         },
       },
@@ -94,6 +126,7 @@ export const tiktokOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '/tiktok/categories',
+            timeout: 120000,
           },
         },
       },

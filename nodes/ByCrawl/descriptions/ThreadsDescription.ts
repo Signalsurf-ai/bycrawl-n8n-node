@@ -32,6 +32,16 @@ export const threadsOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/threads/users/{{$parameter["username"]}}/posts',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -43,6 +53,16 @@ export const threadsOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '=/threads/users/{{$parameter["username"]}}/replies',
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'replies',
+                },
+              },
+            ],
           },
         },
       },
@@ -86,6 +106,16 @@ export const threadsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -101,6 +131,16 @@ export const threadsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'users',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -112,6 +152,16 @@ export const threadsOperations: INodeProperties[] = [
           request: {
             method: 'GET',
             url: '/threads/feed/public',
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'posts',
+                },
+              },
+            ],
           },
         },
       },

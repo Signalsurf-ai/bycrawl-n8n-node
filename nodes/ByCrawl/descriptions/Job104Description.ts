@@ -20,6 +20,16 @@ export const job104Operations: INodeProperties[] = [
             method: 'GET',
             url: '/job104/jobs/search',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'jobs',
+                },
+              },
+            ],
+          },
         },
       },
       {

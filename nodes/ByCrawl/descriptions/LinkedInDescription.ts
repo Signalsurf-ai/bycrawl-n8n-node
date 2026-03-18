@@ -44,6 +44,16 @@ export const linkedinOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/linkedin/companies/{{$parameter["companyId"]}}/jobs',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'jobs',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -83,6 +93,16 @@ export const linkedinOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'jobs',
+                },
+              },
+            ],
+          },
         },
       },
       {
@@ -97,6 +117,16 @@ export const linkedinOperations: INodeProperties[] = [
             qs: {
               q: '={{$parameter["query"]}}',
             },
+          },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'users',
+                },
+              },
+            ],
           },
         },
       },

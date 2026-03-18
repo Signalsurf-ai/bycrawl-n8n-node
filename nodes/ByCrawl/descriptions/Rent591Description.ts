@@ -20,6 +20,16 @@ export const rent591Operations: INodeProperties[] = [
             method: 'GET',
             url: '/rent591/listings',
           },
+          output: {
+            postReceive: [
+              {
+                type: 'rootProperty',
+                properties: {
+                  property: 'listings',
+                },
+              },
+            ],
+          },
         },
       },
       {
