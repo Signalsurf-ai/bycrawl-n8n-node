@@ -32,6 +32,7 @@ export const trustpilotOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/trustpilot/businesses/{{$parameter["domain"]}}/reviews',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -57,6 +58,7 @@ export const trustpilotOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -82,6 +84,7 @@ export const trustpilotOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
         },
       },
       {

@@ -32,6 +32,7 @@ export const pttOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/ptt/boards/{{$parameter["boardName"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -72,6 +73,7 @@ export const pttOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

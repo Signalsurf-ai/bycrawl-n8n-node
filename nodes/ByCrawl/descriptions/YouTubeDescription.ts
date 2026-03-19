@@ -44,6 +44,7 @@ export const youtubeOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/youtube/videos/{{$parameter["videoId"]}}/comments',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -81,6 +82,7 @@ export const youtubeOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

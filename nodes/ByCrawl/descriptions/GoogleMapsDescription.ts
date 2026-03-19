@@ -23,6 +23,7 @@ export const gmapsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

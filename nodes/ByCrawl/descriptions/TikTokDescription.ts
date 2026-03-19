@@ -32,6 +32,7 @@ export const tiktokOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/tiktok/users/{{$parameter["username"]}}/videos',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -67,6 +68,7 @@ export const tiktokOperations: INodeProperties[] = [
             url: '=/tiktok/videos/{{$parameter["videoId"]}}/comments',
             timeout: 120000,
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -105,6 +107,7 @@ export const tiktokOperations: INodeProperties[] = [
             },
             timeout: 120000,
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

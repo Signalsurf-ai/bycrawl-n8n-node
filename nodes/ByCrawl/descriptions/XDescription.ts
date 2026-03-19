@@ -32,6 +32,7 @@ export const xOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/x/users/{{$parameter["username"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -69,6 +70,7 @@ export const xOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

@@ -20,6 +20,7 @@ export const job104Operations: INodeProperties[] = [
             method: 'GET',
             url: '/job104/jobs/search',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

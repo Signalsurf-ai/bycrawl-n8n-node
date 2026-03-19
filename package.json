@@ -6,7 +6,8 @@
   "license": "MIT",
   "homepage": "https://bycrawl.com",
   "author": { "name": "ByCrawl", "email": "support@bycrawl.com" },
-  "repository": { "type": "git", "url": "https://github.com/nicepkg/n8n-nodes-bycrawl" },
+  "repository": { "type": "git", "url": "https://github.com/Signalsurf-ai/bycrawl-n8n-node" },
+  "engines": { "node": ">=18.0.0" },
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
@@ -23,6 +24,7 @@
     "nodes": ["dist/nodes/ByCrawl/ByCrawl.node.js"]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "~7.18.0",
     "@typescript-eslint/parser": "~7.18.0",
     "eslint": "~8.56.0",
     "gulp": "^4.0.2",

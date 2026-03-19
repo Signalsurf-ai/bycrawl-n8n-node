@@ -44,6 +44,7 @@ export const linkedinOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/linkedin/companies/{{$parameter["companyId"]}}/jobs',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -93,6 +94,7 @@ export const linkedinOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -118,6 +120,7 @@ export const linkedinOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

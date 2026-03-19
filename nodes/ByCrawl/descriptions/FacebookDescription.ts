@@ -32,6 +32,7 @@ export const facebookOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/facebook/users/{{$parameter["username"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -72,6 +73,7 @@ export const facebookOperations: INodeProperties[] = [
               url: '={{$parameter["postUrl"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -97,6 +99,7 @@ export const facebookOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -119,6 +122,7 @@ export const facebookOperations: INodeProperties[] = [
             method: 'GET',
             url: '/facebook/marketplace/listings',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -144,6 +148,7 @@ export const facebookOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -303,7 +308,7 @@ export const facebookFields: INodeProperties[] = [
         displayName: 'Location',
         name: 'location',
         type: 'string',
-        default: 'taipei',
+        default: '',
         description: 'Location for marketplace listings',
         routing: {
           request: {
@@ -342,7 +347,7 @@ export const facebookFields: INodeProperties[] = [
         displayName: 'Location',
         name: 'location',
         type: 'string',
-        default: 'taipei',
+        default: '',
         description: 'Location for marketplace search',
         routing: {
           request: {

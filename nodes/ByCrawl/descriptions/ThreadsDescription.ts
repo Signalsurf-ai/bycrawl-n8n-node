@@ -32,6 +32,7 @@ export const threadsOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/threads/users/{{$parameter["username"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -54,6 +55,7 @@ export const threadsOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/threads/users/{{$parameter["username"]}}/replies',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -106,6 +108,7 @@ export const threadsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -131,6 +134,7 @@ export const threadsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -153,6 +157,7 @@ export const threadsOperations: INodeProperties[] = [
             method: 'GET',
             url: '/threads/feed/public',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

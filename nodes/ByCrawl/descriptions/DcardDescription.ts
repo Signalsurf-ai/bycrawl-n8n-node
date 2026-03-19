@@ -34,6 +34,7 @@ export const dcardOperations: INodeProperties[] = [
             url: '=/dcard/forums/{{$parameter["forumAlias"]}}/posts',
             timeout: 120000,
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -73,6 +74,7 @@ export const dcardOperations: INodeProperties[] = [
             },
             timeout: 120000,
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

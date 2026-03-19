@@ -32,6 +32,7 @@ export const redditOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/reddit/subreddits/{{$parameter["subredditName"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -66,6 +67,7 @@ export const redditOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/reddit/users/{{$parameter["username"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -103,6 +105,7 @@ export const redditOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {

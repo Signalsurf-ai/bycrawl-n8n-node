@@ -32,6 +32,7 @@ export const instagramOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/instagram/users/{{$parameter["username"]}}/posts',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -66,6 +67,7 @@ export const instagramOperations: INodeProperties[] = [
             method: 'GET',
             url: '=/instagram/posts/{{$parameter["shortcode"]}}/comments',
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -91,6 +93,7 @@ export const instagramOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
+          send: { paginate: true },
           output: {
             postReceive: [
               {
