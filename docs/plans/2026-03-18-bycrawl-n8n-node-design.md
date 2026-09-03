@@ -1,5 +1,9 @@
 # ByCrawl n8n Community Node — Design
 
+> **Historical document:** This records the original 0.1.0 design and is not the
+> current API contract. Dcard, Job104 company details, and Threads recent search
+> were retired in 0.2.0. Refer to the source and README for supported operations.
+
 ## Overview
 
 A public n8n community node (`@bycrawl/n8n-nodes-bycrawl`) that wraps the ByCrawl social media crawler API, supporting all 15 platforms in a single declarative-style node.

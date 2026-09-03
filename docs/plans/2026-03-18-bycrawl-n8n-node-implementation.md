@@ -1,5 +1,9 @@
 # ByCrawl n8n Community Node — Implementation Plan
 
+> **Historical document:** This records the original 0.1.0 implementation and is
+> not the current API contract. Dcard, Job104 company details, and Threads recent
+> search were retired in 0.2.0. Refer to the source and README for supported operations.
+
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
 **Goal:** Build and publish `@bycrawl/n8n-nodes-bycrawl`, a declarative n8n community node wrapping all 15 ByCrawl API platforms.
