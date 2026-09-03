@@ -8,7 +8,6 @@ import { tiktokOperations, tiktokFields } from './descriptions/TikTokDescription
 import { youtubeOperations, youtubeFields } from './descriptions/YouTubeDescription';
 import { redditOperations, redditFields } from './descriptions/RedditDescription';
 import { linkedinOperations, linkedinFields } from './descriptions/LinkedInDescription';
-import { dcardOperations, dcardFields } from './descriptions/DcardDescription';
 import { pttOperations, pttFields } from './descriptions/PttDescription';
 import { gmapsOperations, gmapsFields } from './descriptions/GoogleMapsDescription';
 import { trustpilotOperations, trustpilotFields } from './descriptions/TrustpilotDescription';
@@ -20,7 +19,7 @@ import { webFetchOperations, webFetchFields } from './descriptions/WebFetchDescr
 const paginatedOperations = [
 	'getUserPosts', 'getUserReplies', 'searchPosts', 'searchUsers', 'getPublicFeed',
 	'getPostComments', 'getUserVideos', 'getVideoComments', 'searchVideos',
-	'getSubredditPosts', 'getCompanyJobs', 'searchJobs', 'getForumPosts',
+	'getSubredditPosts', 'getCompanyJobs', 'searchJobs',
 	'getMarketplaceListings', 'searchMarketplace', 'searchTags',
 	'searchPlaces', 'searchBusinesses', 'searchCategories', 'searchListings',
 	'getCategoryVideos', 'searchUsers',
@@ -34,7 +33,7 @@ export class ByCrawl implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["resource"] + ": " + $parameter["operation"]}}',
-		description: 'Crawl social media data from 15+ platforms using ByCrawl API',
+		description: 'Fetch social media and web data using the ByCrawl API',
 		defaults: {
 			name: 'ByCrawl',
 		},
@@ -70,7 +69,6 @@ export class ByCrawl implements INodeType {
 					{ name: 'YouTube', value: 'youtube' },
 					{ name: 'Reddit', value: 'reddit' },
 					{ name: 'LinkedIn', value: 'linkedin' },
-					{ name: 'Dcard', value: 'dcard' },
 					{ name: 'PTT', value: 'ptt' },
 					{ name: 'Google Maps', value: 'gmaps' },
 					{ name: 'Trustpilot', value: 'trustpilot' },
@@ -122,8 +120,6 @@ export class ByCrawl implements INodeType {
 			...redditFields,
 			...linkedinOperations,
 			...linkedinFields,
-			...dcardOperations,
-			...dcardFields,
 			...pttOperations,
 			...pttFields,
 			...gmapsOperations,

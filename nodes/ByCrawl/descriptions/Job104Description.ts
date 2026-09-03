@@ -45,18 +45,6 @@ export const job104Operations: INodeProperties[] = [
           },
         },
       },
-      {
-        name: 'Get Company',
-        value: 'getCompany',
-        description: 'Get Job104 company details',
-        action: 'Get Job104 company details',
-        routing: {
-          request: {
-            method: 'GET',
-            url: '=/job104/companies/{{$parameter["companyId"]}}',
-          },
-        },
-      },
     ],
     default: 'searchJobs',
   },
@@ -76,20 +64,6 @@ export const job104Fields: INodeProperties[] = [
       },
     },
     description: 'The Job104 job ID',
-  },
-  {
-    displayName: 'Company ID',
-    name: 'companyId',
-    type: 'string',
-    required: true,
-    default: '',
-    displayOptions: {
-      show: {
-        resource: ['job104'],
-        operation: ['getCompany'],
-      },
-    },
-    description: 'The Job104 company ID',
   },
   {
     displayName: 'Additional Fields',

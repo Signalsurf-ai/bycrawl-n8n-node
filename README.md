@@ -1,6 +1,6 @@
 # n8n-nodes-bycrawl
 
-This is an n8n community node that lets you use the [ByCrawl](https://bycrawl.com) API to crawl social media data from 15+ platforms in your n8n workflows.
+This is an n8n community node that lets you use the [ByCrawl](https://bycrawl.com) API to crawl social media and web data in your n8n workflows.
 
 ## Installation
 
@@ -30,11 +30,10 @@ You need a ByCrawl API key to use this node.
 | YouTube | 5 | Get Channel, Get Video, Transcription |
 | Reddit | 6 | Get Subreddit, Get User, Search Posts |
 | LinkedIn | 7 | Get User, Get Company, Search Jobs |
-| Dcard | 4 | Get Forum, Search Posts |
 | PTT | 4 | Get Board, Get Post, Search |
 | Google Maps | 2 | Search Places, Get Place |
 | Trustpilot | 5 | Get Business, Get Reviews, Search |
-| Job104 | 3 | Search Jobs, Get Job, Get Company |
+| Job104 | 2 | Search Jobs, Get Job |
 | 591 Rent | 2 | Search Listings, Get Listing |
 | Web Fetch | 1 | Fetch Page |
 

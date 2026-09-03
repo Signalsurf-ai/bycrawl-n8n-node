@@ -241,36 +241,6 @@ export const threadsFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['threads'],
-        operation: ['searchPosts'],
-      },
-    },
-    options: [
-      {
-        displayName: 'Search Type',
-        name: 'search_type',
-        type: 'options',
-        options: [
-          { name: 'Top', value: 'top' },
-          { name: 'Recent', value: 'recent' },
-        ],
-        default: 'top',
-        routing: {
-          request: {
-            qs: { search_type: '={{$value}}' },
-          },
-        },
-      },
-    ],
-  },
-  {
-    displayName: 'Additional Fields',
-    name: 'additionalFields',
-    type: 'collection',
-    placeholder: 'Add Field',
-    default: {},
-    displayOptions: {
-      show: {
-        resource: ['threads'],
         operation: ['getUserPosts', 'getUserReplies'],
       },
     },
