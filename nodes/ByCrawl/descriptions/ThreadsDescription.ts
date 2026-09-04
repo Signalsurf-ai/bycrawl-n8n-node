@@ -108,7 +108,6 @@ export const threadsOperations: INodeProperties[] = [
               q: '={{$parameter["query"]}}',
             },
           },
-          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -255,6 +254,73 @@ export const threadsFields: INodeProperties[] = [
         routing: {
           request: {
             qs: { count: '={{$value}}' },
+          },
+        },
+      },
+    ],
+  },
+  {
+    displayName: 'Search Options',
+    name: 'searchOptions',
+    type: 'collection',
+    placeholder: 'Add Option',
+    default: {},
+    displayOptions: {
+      show: {
+        resource: ['threads'],
+        operation: ['searchPosts'],
+      },
+    },
+    options: [
+      {
+        displayName: 'Search Type',
+        name: 'searchType',
+        type: 'options',
+        options: [
+          { name: 'Top (Relevance)', value: 'top' },
+          { name: 'Recent (Chronological)', value: 'recent' },
+        ],
+        default: 'top',
+        routing: {
+          request: {
+            qs: { search_type: '={{$value}}' },
+          },
+        },
+      },
+      {
+        displayName: 'Count',
+        name: 'count',
+        type: 'number',
+        typeOptions: { minValue: 1, maxValue: 200 },
+        default: 10,
+        description: 'Maximum results: 25 for Top, 200 for Recent. Recent has a 20-credit minimum.',
+        routing: {
+          request: {
+            qs: { count: '={{$value}}' },
+          },
+        },
+      },
+      {
+        displayName: 'Since',
+        name: 'since',
+        type: 'dateTime',
+        default: '',
+        description: 'Lower time bound; only valid for Recent search',
+        routing: {
+          request: {
+            qs: { since: '={{$value}}' },
+          },
+        },
+      },
+      {
+        displayName: 'Until',
+        name: 'until',
+        type: 'dateTime',
+        default: '',
+        description: 'Upper time bound; only valid for Recent search',
+        routing: {
+          request: {
+            qs: { until: '={{$value}}' },
           },
         },
       },
