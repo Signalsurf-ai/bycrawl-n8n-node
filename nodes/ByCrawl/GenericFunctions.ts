@@ -26,6 +26,7 @@ export async function byCrawlApiPagination(
 	requestData.options.qs = requestData.options.qs ?? {};
 
 	let hasMore = true;
+	const seenCursors = new Set<string>();
 
 	do {
 		const pageResponse = await this.makeRoutingRequest(requestData);
@@ -52,6 +53,8 @@ export async function byCrawlApiPagination(
 		// Pattern 3: { pageInfo: { endCursor, hasNextPage } }
 		let nextCursor: string | undefined;
 
+		if (json.hasMore === false) break;
+
 		if (json.cursor && typeof json.cursor === 'string') {
 			nextCursor = json.cursor;
 		} else if (json.nextCursor && typeof json.nextCursor === 'string') {
@@ -63,9 +66,10 @@ export async function byCrawlApiPagination(
 			}
 		}
 
-		if (!nextCursor) {
+		if (!nextCursor || seenCursors.has(nextCursor)) {
 			hasMore = false;
 		} else {
+			seenCursors.add(nextCursor);
 			requestData.options.qs = {
 				...requestData.options.qs,
 				cursor: nextCursor,
