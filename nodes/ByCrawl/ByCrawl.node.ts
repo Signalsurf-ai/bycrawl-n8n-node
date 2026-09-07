@@ -85,6 +85,7 @@ export class ByCrawl implements INodeType {
 				default: false,
 				description: 'Whether to return all results or only up to a given limit',
 				displayOptions: {
+					hide: { resource: ['threads'], operation: ['getUserPosts'] },
 					show: {
 						operation: paginatedOperations,
 					},
@@ -98,6 +99,7 @@ export class ByCrawl implements INodeType {
 				default: 50,
 				description: 'Max number of results to return',
 				displayOptions: {
+					hide: { resource: ['threads'], operation: ['getUserPosts'] },
 					show: {
 						operation: paginatedOperations,
 						returnAll: [false],

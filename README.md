@@ -45,3 +45,10 @@ You need a ByCrawl API key to use this node.
 ## License
 
 [MIT](LICENSE)
+# Threads user-post scope
+
+Get User Posts returns the first public batch only, not a complete history.
+It does not paginate or accept a custom count. Return All/Limit are hidden for
+this operation; existing operation IDs and `posts` unwrapping stay unchanged.
+Repeat runs fetch the first batch again. A package update is required for installed
+nodes to receive this correction; merging repository code alone does not publish it.
