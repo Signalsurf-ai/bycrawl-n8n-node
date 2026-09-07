@@ -25,14 +25,13 @@ export const threadsOperations: INodeProperties[] = [
       {
         name: 'Get User Posts',
         value: 'getUserPosts',
-        description: 'Get posts by a Threads user',
+        description: 'Get the first public batch of user posts; no pagination or complete history',
         action: 'Get posts by a Threads user',
         routing: {
           request: {
             method: 'GET',
             url: '=/threads/users/{{$parameter["username"]}}/posts',
           },
-          send: { paginate: true },
           output: {
             postReceive: [
               {
@@ -240,7 +239,7 @@ export const threadsFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['threads'],
-        operation: ['getUserPosts', 'getUserReplies'],
+        operation: ['getUserReplies'],
       },
     },
     options: [

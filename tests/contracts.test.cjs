@@ -4,6 +4,17 @@ const { byCrawlApiPagination } = require('../dist/nodes/ByCrawl/GenericFunctions
 const { ByCrawl } = require('../dist/nodes/ByCrawl/ByCrawl.node.js');
 const { ByCrawlApi } = require('../dist/credentials/ByCrawlApi.credentials.js');
 
+test('Threads user posts has no automatic pagination or inert count controls', () => {
+  const properties = new ByCrawl().description.properties;
+  const operation = properties.find(p => p.name === 'operation' && p.displayOptions?.show?.resource?.includes('threads')).options.find(o => o.value === 'getUserPosts');
+  assert.equal(operation.routing.send?.paginate, undefined);
+  assert.equal(operation.routing.output.postReceive[0].properties.property, 'posts');
+  for (const name of ['returnAll', 'limit']) {
+    assert.deepEqual(properties.find(p => p.name === name).displayOptions.hide, { resource: ['threads'], operation: ['getUserPosts'] });
+  }
+  assert.equal(properties.some(p => p.name === 'additionalFields' && p.displayOptions?.show?.resource?.includes('threads') && p.displayOptions?.show?.operation?.includes('getUserPosts')), false);
+});
+
 async function paginate(pages, { returnAll = true, limit = 50 } = {}) {
   const cursors = [];
   const result = await byCrawlApiPagination.call({
